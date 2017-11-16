@@ -1,0 +1,6 @@
+# Arquivos do vim
+*~
+*.swp
+
+# Arquivos do composer
+vendor/
