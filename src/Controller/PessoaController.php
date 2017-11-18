@@ -1,8 +1,7 @@
 <?php
+namespace Controller;
 
-use classes\pessoa\PessoaDAO;
-require_once 'vendor/autoload.php';
-
+//get
 $pessoaDAO = new PessoaDAO();
 $pessoas = $pessoaDAO->selecionaPessoas();
 $json = [];

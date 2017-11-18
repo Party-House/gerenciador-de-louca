@@ -1,10 +1,6 @@
 <?php
 
-require_once './vendor/autoload.php';
-
-use classes\IndisponibilidadeDAO;
-use classes\IndisponibilidadeSemanalDAO;
-
+//get
 if($_GET['tipo'] == 'semanais') {
     $indisponibilidadeSemanalDAO = new IndisponibilidadeSemanalDAO();
     $indisponibilidades = $indisponibilidadeSemanalDAO->selecionaIndisponibilidadesSemanais();
@@ -29,3 +25,18 @@ if($_GET['tipo'] == 'semanais') {
     }
     echo(json_encode($retorno));
 }
+
+//insert
+$idPessoa = intval($_POST['quem']);
+$data = new Data($_POST['quando']);
+$pessoa = new Pessoa($idPessoa, "");
+$indisponibilidade = new Indisponibilidade($pessoa, $data);
+
+$indisponibilidadeDAO = new IndisponibilidadeDAO();
+$indisponibilidadeDAO->insere($indisponibilidade);
+
+header('Location: disponibilidades.php');
+
+//delete
+$indisponibilidadeDAO = new IndisponibilidadeDAO();
+$indisponibilidadeDAO->deleta((int) $_POST['id']);

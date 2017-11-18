@@ -4,3 +4,6 @@
 
 # Arquivos do composer
 vendor/
+
+# Arquivos de configuração
+config/
