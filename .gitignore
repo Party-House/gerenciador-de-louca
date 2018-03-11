@@ -1,9 +1,11 @@
-# Arquivos do vim
-*~
-*.swp
 
-# Arquivos do composer
-vendor/
+###> symfony/framework-bundle ###
+.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
 
-# Arquivos de configuração
-config/
+###> symfony/web-server-bundle ###
+.web-server-pid
+###< symfony/web-server-bundle ###
